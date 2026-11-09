@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShayariSafar - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🌸 ShayariSafar 🌸</h1>
+
+    <h2>Welcome, {{ name }} ❤️</h2>
+
+    <p>Words that touch your heart and feelings that stay forever.</p>
+
+    <h2>Explore Your Feelings</h2>
+
+    <div class="category-container">
+
+        <div class="category-card">
+            <h3>❤️ Love Shayari</h3>
+            <p>Beautiful words of love.</p>
+            <button onclick="location.href='/quotes?category=Love'">Explore</button>
+        </div>
+
+        <div class="category-card">
+            <h3>💔 Sad Shayari</h3>
+            <p>Express your hidden feelings.</p>
+            <button onclick="location.href='/quotes?category=Sad'">Explore</button>
+        </div>
+
+        <div class="category-card">
+            <h3>✨ Motivation</h3>
+            <p>Words that inspire you.</p>
+            <button onclick="location.href='/quotes?category=Motivation'">Explore</button>
+        </div>
+
+        <div class="category-card">
+            <h3>🌷 Life Quotes</h3>
+            <p>Beautiful thoughts about life.</p>
+            <button onclick="location.href='/quotes?category=Life'">Explore</button>
+        </div>
+
+        <div class="category-card">
+            <h3>👫 Friendship</h3>
+            <p>Celebrate true friendship.</p>
+            <button onclick="location.href='/quotes?category=Friendship'">Explore</button>
+        </div>
+
+    </div>
+
+    <br>
+
+    <button onclick="location.href='/quotes'">📖 All Quotes</button>
+
+    <button onclick="location.href='/favourites'">❤️ My Favourites</button>
+
+    <br><br>
+
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

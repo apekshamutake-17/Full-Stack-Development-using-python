@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShayariSafar - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>ShayariSafar ❤️</h1>
+    <h2>Create Your Account</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Full Name:</label><br>
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <br><br>
+
+        <label>Confirm Password:</label><br>
+        <input type="password" name="confirm_password" placeholder="Confirm password" required>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login Here</a></p>
+
+</body>
+</html>

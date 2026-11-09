@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShayariSafar - My Favourites</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>ShayariSafar ❤️</h1>
+
+    <h2>My Favourite Quotes</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    {% if quotes %}
+
+        {% for quote in quotes %}
+
+            <div>
+                <h3>{{ quote[2] }}</h3>
+                <p>{{ quote[1] }}</p>
+                <p>Author: {{ quote[3] }}</p>
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>You have not added any favourites yet!</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/quotes">Explore Quotes</a>
+
+    <br><br>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+    <br><br>
+
+    <a href="/logout">Logout</a>
+
+</body>
+</html>
